@@ -29,8 +29,7 @@
             }
 
   .menu:hover{
-    background-color: yellow;
-    cursor: crosshair;
+    background-color: lightblue;
 }
 
 .main           {
