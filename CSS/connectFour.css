@@ -1,8 +1,20 @@
 body {
-  background-color: periwinkle;
+  background-color: grey;
   text-align: center;
 }
 
+h1 {
+
+  margin: 0 auto;
+
+  font-family: "Comic Sans MS", cursive, sans-serif;
+
+  font-size: 48px;
+
+  margin: 2%;
+
+}
+  
 td {
   border-color: white;
 }
