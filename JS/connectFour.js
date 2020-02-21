@@ -1,13 +1,14 @@
+///////////////////// CONSTANTS /////////////////////////////////////
 const winningConditions = [
 //horizontal
   [35, 36, 37, 38],
   [36, 37, 38, 39],
   [37, 38, 39, 40],
   [38, 39, 40, 41],
-  [28, 29, 30, 31]
+  [28, 29, 30, 31],
   [29, 30, 31, 32],
   [30, 31, 32, 33],
-  [31, 32, 33, 34]
+  [31, 32, 33, 34],
   [21, 22, 23, 24],
   [22, 23, 24, 25],
   [23, 24, 25, 26],
@@ -71,56 +72,115 @@ const winningConditions = [
   [27, 19, 11, 3],
   [26, 18, 10, 2],
   [25, 17, 9, 1],
-  [24, 16, 8, 0]]
-
+  [24, 16, 8, 0]
+];
 
 
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
 let turn;
-let scoreRed = 0;
-let scoreYellow = 0;
+let win;
+let redWins = 0;
+let yellowWins = 0;
+let ties = 0;
+let first;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
-const circles = Array.from(document.querySelectorAll("#board div"));
+const dots = Array.from(document.querySelectorAll("#board div"));
+const message = document.querySelector("h2");
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
-document.getElementById("reset-button").onclick = init;
-document.getElementById("first_Red").onclick = first_Red;
-document.getElementById("first_Yellow").onclick = first_Yellow;
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
-//clears board
-function init(){
-  board = ["","","","","","","",
-           "","","","","","","",
-           "","","","","","","",
-           "","","","","","","",
-           "","","","","","","",
-           "","","","","","",""]
-  turn = turn;
-  win = null;
-  render();
-}
-  function render(){
-    board.forEach(function(mark, index){
-      console.log(mark, index);
-      circles[index].style.backgroundColor = mark;
-    });
-}
- function render2(){
 
-  }
-function takeTurn(e) {
-  let index = circles.findIndex(function(circles) {
-    return circles === e.target;
-  });
-  if ( board[index] == "" ) {
-    board[index]= turn;
-  turn = turn === "Red"?"Yellow":"Red";
+function init() {
+  board = [
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+    "", "", "", "", "", "", "",
+  ];
+  turn = "Red"
+  win = null
+
   render();
 }
+
+
+function render() {
+  board.forEach(function(mark, index) {
+    dots[index].textContent = mark;
+  });
+
+  message.textContent =
+    win === "T" ? "It's a tie!" : win ? `${win} wins!` : `Turn: ${turn}`;
 }
+
+function takeTurn(e) {
+  if (!win) {
+    let index = dots.findIndex(function(dot) {
+      return dot === e.target;
+    });
+
+
+    let row1 = index % 7;
+
+    if (board[index] === "") {
+
+      while (board[index + 7] === "") {
+        let i = index + 7;
+        document.getElementById("dot" + i + "").classList.add(turn);
+        board[i] = turn;
+        document.getElementById("dot" + index + "").classList.remove(turn);
+        board[index] = "";
+        index = i;
+
+      }
+      if (board[index] === "") {
+        document.getElementById("dot" + index + "").classList.add(turn);
+        board[index] = turn;
+
+      }
+
+      }
+      else if (board[index] !== "") {
+        if (board[row1] === "") {
+          while (board[row1 + 7] === "") {
+            let i = row1 + 7;
+            document.getElementById("dot" + i + "").classList.add(turn);
+            board[i] = turn;
+            document.getElementById("dot" + row1 + "").classList.remove(turn);
+            board[row1] = "";
+            row1 = i;
+
+          }
+          if (board[row1] === "") {
+            document.getElementById("dot" + row1 + "").classList.add(turn);
+            board[row1] = turn;
+
+          }
+
+        }
+      }
+      else if (board[row1] !== "") {
+        alert("choose");
+
+      }
+
+      }
+
+      turn = turn === "Red" ? "Yellow" : "Red";
+      win = getWinner();
+      if (win === "T") {
+        ties++;
+        document.getElementById("tScore").innerHTML = ties;
+      }
+
+      render();
+    }
+
 
 
 function getWinner() {
@@ -130,28 +190,12 @@ function getWinner() {
     if (
       board[condition[0]] &&
       board[condition[0]] === board[condition[1]] &&
-      board[condition[1]] === board[condition[2]]
+      board[condition[1]] === board[condition[2]] &&
+      board[condition[2]] === board[condition[3]]
     ) {
       winner = board[condition[0]];
-      if(winner === "Red"){
-        scoreRed++;
-        document.getElementById("Red").innerHTML = scoreRed;
-      }
-      if(winner === "Yellow"){
-        scoreYellow++;
-        document.getElementById("score_Yellow").innerHTML = scoreYellow;
-      }
     }
   });
-}
-//going first
-function first_Red(){
-  init();
-  document.getElementById("go").innerHTML = "Turn: Red";
-  turn = "Red";
-}
-function first_Yellow(){
-  init();
-  document.getElementById("go").innerHTML = "Turn: Yellow";
-  turn = "Yellow";
+
+  return winner ? winner : board.includes("") ? null : "T";
 }
