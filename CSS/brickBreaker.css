@@ -34,12 +34,12 @@
 
 
 .square:hover {
-  background-color: black;
+  background-color: grey;
   cursor: pointer;
 }
 
 .menu           {
-            background-color:#FFFFFF;
+            background-color:#lightgrey;
             border-bottom-width:2px;
             border-bottom-color:#000000;
             border-bottom-style: solid;
@@ -56,17 +56,17 @@
             .menu h1        {
                         float:left;
                         font-family: "Lucida Bright", Georgia, serif; font-size: 40px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+                        text-align: center;
                         }
 
   .menu:hover{
     background-color: yellow;
-    cursor: crosshair;;
 }
 
 .main           {
             width:65%;
             margin:0 auto;
-            background-color:#FFFFFF;
+            background-color: lightgrey;
             text-align:center;
             font-family:andalus;
             font-size:24px;
@@ -147,4 +147,5 @@ p {
 #gameCanvas {
   margin: auto;
   border-radius: 10px;
+  text-align: center;
 }
