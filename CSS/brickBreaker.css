@@ -38,92 +38,89 @@
   cursor: pointer;
 }
 
-.menu           {
-            background-color:#lightgrey;
-            border-bottom-width:2px;
-            border-bottom-color:#000000;
-            border-bottom-style: solid;
-            position: relative;
-            top:-15px;
-            text-align:center;
-            font-family:Andalus;
-            font-size:18px;
-            padding-left:1em;
-            padding-right:1em;
-            overflow:hidden;
-            }
-
-            .menu h1        {
-                        font-family: "Comic Sans MS", cursive, sans-serif;
-                        text-align: center;
-                        }
-
-  .menu:hover{
-    background-color: yellow;
+.menu {
+  background-color: lightgrey;
+  border-bottom-width:2px;
+  border-bottom-color:#000000;
+  border-bottom-style: solid;
+  position: relative;
+  top:-15px;
+  text-align:center;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  font-size:18px;
+  padding-left:1em;
+  padding-right:1em;
+  overflow:hidden;
 }
 
-.main           {
-            width:65%;
-            margin:0 auto;
-            background-color: lightgrey;
-            text-align:center;
-            font-family:andalus;
-            font-size:24px;
-            padding-top:1px;
-            }
+.menu h1 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  text-align: center;
+}
 
-.footer         {
-            text-align:centre;
-            background-color:#C8C8C8;
-            color:#000000;
-            font-family:andalus;
-            margin-bottom:-1em;
-            }
+.menu:hover {
+   background-color: grey;
+}
 
-#footer li      {
-            display:inline-block;
-            padding-right:8em;
-            vertical-align:middle;
-            margin-top: -30px;
-            }
+.main {
+   width:65%;
+   margin:0 auto;
+   background-color: lightgrey;
+   text-align:center;
+   font-family:"Comic Sans MS", cursive, sans-serif;
+   font-size:24px;
+   padding-top:1px;
+}
 
+.footer {
+   text-align:center;
+   background-color: lightgrey;
+   color: grey;
+   font-family:"Comic Sans MS", cursive, sans-serif;
+   margin-bottom:-1em;
+}
 
-#nav            {
-            padding-top:15px;
-            }
-
-#nav a          {
-            text-decoration:none;
-            }
-
-#nav a:link     {
-            color:black;
-            }
-
-#nav a:visited  {
-            color:black;
-            }
-
-#nav a:hover    {
-            color:blue;
-            }
-
-img             {
-            margin:42px;
-            }
-
-#nav ul         {
-            display:inline-block;
-            }
+#footer li {
+   display:inline-block;
+   padding-right:8em;
+   vertical-align:middle;
+   margin-top: -30px;
+}
 
 
-#nav li         {
-            display:inline-block;
-            margin-right:4.5em;
-            padding-right:2.5em;
-            }
+#nav {
+   padding-top:15px;
+}
+
+#nav a {
+   text-decoration:none;
+}
+
+#nav a:link {
+   color:black;
+}
+
+#nav a:visited {
+    color:black;
+}
+
+#nav a:hover {
+    color:blue;
+}
+
+img {
+    margin:42px;
+}
+
+#nav ul {
+    display:inline-block;
+}
 
 
+#nav li {
+    display:inline-block;
+    margin-right:4.5em;
+    padding-right:2.5em;
 }
 
 body {
