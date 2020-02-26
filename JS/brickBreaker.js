@@ -1,36 +1,27 @@
 window.onload = function() {
   canvas = document.getElementById('gameCanvas');
   canvasContext = canvas.getContext('2d');
-
   var framesPerSecond = 50;
   setInterval(updateAll, 1000/framesPerSecond);
-
   canvas.addEventListener('mousedown', handleMouseClick);
-
   canvas.addEventListener('mousemove', updateMousePosition);
-
   brickReset();
 }
 
-
 var canvas, canvasContext;
-
 
 var ballX = 400;
 var ballSpeedX = 0;
 var ballY = 530;
 var ballSpeedY = 0;
 
-
 const PADDLE_WIDTH = 100;
 const PADDLE_HEIGHT = 10;
 const PADDLE_DIST_FROM_EDGE = 60;
 var paddleX = 350;
 
-
 var mouseX;
 var mouseY;
-
 
 const BRICK_WIDTH = 80;
 const BRICK_HEIGHT = 20;
@@ -39,7 +30,6 @@ const BRICK_GAP = 2;
 const BRICK_ROWS = 17;
 var brickGrid = new Array(BRICK_COLS * BRICK_ROWS);
 var bricksLeft = 0;
-
 
 var maximumScore = 0;
 var playerScore = 0;
