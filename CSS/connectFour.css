@@ -1,94 +1,205 @@
 body {
+  background-image: url("../images/cloudy.gif");
+  background-size: cover;
   text-align: center;
-  font-family: "Spade", monospace;
-  background-color: #dbf3fa;
-  color: #522d80;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: black;
 }
 
 h1 {
-  color: #522d80;
   margin: 0 auto;
-  font-family: "Major Mono Display", monospace;
-  font-size: 64px;
-  margin: 2%;
-}
-
-
-h2 {
-  color: #6593f5;
-  font-family: "Spade", monospace;
-  font-weight: lighter;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 48px;
   margin: 2%;
+  color: black;
 }
 
-h3 {
-  color: #f25278;
-  font-family: "Spade", monospace;
-  font-size: 36px;
-  font-weight: lighter;
+td {
+  border-color: white;
 }
-h4 {
-  color: #9172ec;
-  font-family: "Spade", monospace;
-  font-size: 28px;
-  font-weight: lighter;
+
+p {
+  background-color: black;
 }
+table, td, th {
+  border: 1px solid white;
+}
+
+div {
+  text margin: 0px;
+}
+
+td {
+  border-color: black;
+}
+
+p {
+  background-color: black;
+}
+table, td, th {
+  border: 1px solid white;
+  color: black;
+}
+
 ul {
-  color: #522d80;
-  font-size: 24px;
-  font-family: "Spade", monospace;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.dot {
+  height: 100px;
+  width: 100px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 175px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+
+}
+
+.wrap {
+  flex-wrap: wrap;
+  height: 750px;
+  width: 800px;
 }
 
 .container {
+align-items: center;
+}
+
+.containerv2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.column {
+.columnv2 {
   height: 100%;
   width: 100%;
   flex-direction: column;
 }
 
-
-.wrap {
-  flex-wrap: wrap;
-  height: 456px;
-  width: 456px;
+.Red {
+  background-color: #ed3b3b;
+  color: transparent;
 }
 
+.Yellow {
+  background-color: #f5ef38;
+  color: transparent;
+}
 
-.square {
-  border: 1px solid rgba(0, 0, 0, 0.75);
-  font-size: 96px;
-  height: 150px;
-  line-height: 150px;
+.first {
+  border: 1px solid;
+  font-size: 46px;
+  height: 90px;
+  line-height: 100px;
   user-select: none;
-  width: 150px;
+  width: 110px;
+  margin: 5%;
+  border-radius: 50%;
+  color: white;
 }
 
+.first:hover {
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
 
-.square:hover {
-  background-color: #b19cd9;
+.scoreboard {
+  border-collapse: collapse;
+  margin: 2%;
+  border-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#board {
+  background-color: #348ceb;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 123px;
+  user-select: none;
+
+}
+
+#yellowFirst {
+  background-color: #f5ef38;
+}
+
+#redFirst {
+  background-color: #ed3b3b;
+}
+
+#reset-button {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-size: 21px;
+  line-height: 55px;
+  margin: auto;
+  margin-top: 5px;
+  text-align: center;
+  width: 456px;
+
+}
+
+#reset-button:hover {
+  background-color: black;
+  color: white;
   cursor: pointer;
 }
 
+#turn {
+  font-size: 70px;
+  margin: 5px;
+}
 
-#reset-button {
-  background-color: #b19cd9;
-  border: 2px solid black;
+#reset-scoreboard {
+  background-color: white;
+  border: 1px solid black;
   color: black;
-  font-size: 46px;
+  font-size: 21px;
   line-height: 55px;
-  margin: 1%;
+  margin: 0%;
   text-align: center;
   width: 456px;
 }
 
-
-#reset-button:hover {
+#reset-scoreboard:hover {
   background-color: black;
   color: white;
   cursor: pointer;
