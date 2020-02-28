@@ -1,14 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Connect Four</title>
-    <link href="CSS/connectFour.css" rel="stylesheet" type="text/css" />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/connectFour.css">
     <script defer src="JS/connectFour.js"></script>
+
+    <title>| Connect | Four |</title>
+
   </head>
   <body>
+
       <h1>| Connect | Four |</h1>
+
+
+
+        <h3>Who's going first?</h3>
+        <div class="containerv2 columnv2">
+
+
+        <div class="containerv2">
+          <div class="first" id="redFirst"></div>
+          <div class="first" id="yellowFirst"></div>
+        </div>
+
+
+        <table class="scoreboard">
+          <tr>
+            <td># of Red Wins:</td>
+            <td># of Ties:</td>
+            <td># Of Yellow Wins:</td>
+          </tr>
+          <tr>
+            <td id="redScore">0</td>
+            <td id="tScore">0</td>
+            <td id="yellowScore">0</td>
+          </tr>
+        </table>
+        <div id="reset-scoreboard">Reset Scoreboard</div>
       <h2 id="turn">Turn: Red</h2>
+      </div>
+
+     <div class="container column">
       <div class="wrap container" id="board">
         <div class="dot" id="dot0"></div>
         <div class="dot" id="dot1"></div>
@@ -54,7 +89,8 @@
         <div class="dot" id="dot41"></div>
 
       </div>
+
+      <div id="reset-button">Play Again!</div>
+    </div>
   </body>
-  <br></br>
-      <a href="https://afosantos1.github.io/pset-9/index.html">Return To Home Page</a>
 </html>
