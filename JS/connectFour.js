@@ -83,14 +83,18 @@ let win;
 let redWins = 0;
 let yellowWins = 0;
 let ties = 0;
-let first;
+let first = "Red";
+let winner;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const dots = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
 document.getElementById("board").onclick = takeTurn;
-
+document.getElementById("reset-button").onclick = init;
+document.getElementById("redFirst").onclick = redFirst;
+document.getElementById("yellowFirst").onclick = yellowFirst;
+document.getElementById("reset-scoreboard").onclick = resetScoreboard;
 ///////////////////// FUNCTIONS /////////////////////////////////////
 
 function init() {
@@ -102,8 +106,25 @@ function init() {
     "", "", "", "", "", "", "",
     "", "", "", "", "", "", "",
   ];
+
+  board.forEach(function(mark, index) {
+    if (dots[index].classList.contains("Red")) {
+      dots[index].classList.remove("Red")
+    }
+    if (dots[index].classList.contains("Yellow")) {
+      dots[index].classList.remove("Yellow")
+    }
+  });
+
   turn = "Red"
   win = null
+
+  if (first === "Red") {
+    turn = "Red"
+  }
+  else if (first === "Yellow") {
+    turn = "Yellow"
+  }
 
   render();
 }
@@ -119,68 +140,72 @@ function render() {
 }
 
 function takeTurn(e) {
-  if (!win) {
-    let index = dots.findIndex(function(dot) {
-      return dot === e.target;
-    });
+
+ if (e.target.id == "board") {
+    return false;
+  }
+
+if (!win) {
+let index = dots.findIndex(function(dot) {
+  return dot === e.target;
+});
 
 
-    let row1 = index % 7;
+let row1 = index % 7;
 
-    if (board[index] === "") {
+if (board[index] === "") {
 
-      while (board[index + 7] === "") {
-        let i = index + 7;
+  while (board[index + 7] === "") {
+    let i = index + 7;
+    document.getElementById("dot" + i + "").classList.add(turn);
+    board[i] = turn;
+    document.getElementById("dot" + index + "").classList.remove(turn);
+    board[index] = "";
+    index = i;
+
+  }
+  if (board[index] === "") {
+    document.getElementById("dot" + index + "").classList.add(turn);
+    board[index] = turn;
+
+  }
+
+  }
+  else if (board[index] !== "") {
+    if (board[row1] === "") {
+      while (board[row1 + 7] === "") {
+        let i = row1 + 7;
         document.getElementById("dot" + i + "").classList.add(turn);
         board[i] = turn;
-        document.getElementById("dot" + index + "").classList.remove(turn);
-        board[index] = "";
-        index = i;
+        document.getElementById("dot" + row1 + "").classList.remove(turn);
+        board[row1] = "";
+        row1 = i;
 
       }
-      if (board[index] === "") {
-        document.getElementById("dot" + index + "").classList.add(turn);
-        board[index] = turn;
-
-      }
-
-      }
-      else if (board[index] !== "") {
-        if (board[row1] === "") {
-          while (board[row1 + 7] === "") {
-            let i = row1 + 7;
-            document.getElementById("dot" + i + "").classList.add(turn);
-            board[i] = turn;
-            document.getElementById("dot" + row1 + "").classList.remove(turn);
-            board[row1] = "";
-            row1 = i;
-
-          }
-          if (board[row1] === "") {
-            document.getElementById("dot" + row1 + "").classList.add(turn);
-            board[row1] = turn;
-
-          }
-
-        }
-      }
-      else if (board[row1] !== "") {
-        alert("choose");
+      if (board[row1] === "") {
+        document.getElementById("dot" + row1 + "").classList.add(turn);
+        board[row1] = turn;
 
       }
 
-      }
-
-      turn = turn === "Red" ? "Yellow" : "Red";
-      win = getWinner();
-      if (win === "T") {
-        ties++;
-        document.getElementById("tScore").innerHTML = ties;
-      }
-
-      render();
     }
+    else if (board[row1] !== "") {
+      return false;
+    }
+   }
 
+
+
+  turn = turn === "Red" ? "Yellow" : "Red";
+  win = getWinner();
+  if (win === "T") {
+    ties++;
+    document.getElementById("tScore").innerHTML = ties;
+  }
+
+  render();
+}
+}
 
 
 function getWinner() {
@@ -194,8 +219,77 @@ function getWinner() {
       board[condition[2]] === board[condition[3]]
     ) {
       winner = board[condition[0]];
+      if (winner === "Red") {
+        redWins++;
+        document.getElementById("redScore").innerHTML = redWins;
+        playOKOK();
+
+      }
+      else if (winner === "Yellow") {
+        yellowWins++;
+        document.getElementById("yellowScore").innerHTML = yellowWins;
+        playOKOK();
+
+      }
+
     }
+
   });
 
   return winner ? winner : board.includes("") ? null : "T";
+}
+
+function playAgain() {
+  board.forEach(function(mark, index) {
+    if (dots[index].classList.contains("Red")) {
+      dots[index].classList.remove("Red")
+    }
+    if (dots[index].classList.contains("Yellow")) {
+      dots[index].classList.remove("Yellow")
+    }
+  });
+  init()
+}
+
+function resetScoreboard() {
+  redWins = 0;
+  yellowWins = 0;
+  ties = 0;
+
+  document.getElementById("redScore").innerHTML = redWins;
+  document.getElementById("tScore").innerHTML = ties;
+  document.getElementById("yellowScore").innerHTML = yellowWins;
+}
+
+function redFirst(){
+  init();
+
+  document.getElementById("turn").innerHTML = "Turn: Red";
+  turn = "Red";
+  first = "Red"
+
+
+}
+
+function yellowFirst(){
+  init();
+
+  document.getElementById("turn").innerHTML = "Turn: Yellow";
+  turn = "Yellow";
+  first = "Yellow"
+
+}
+
+function resetScoreboard() {
+    redWins = 0;
+    yellowWins = 0;
+    ties = 0;
+
+    document.getElementById("redScore").innerHTML = redWins;
+    document.getElementById("tScore").innerHTML = ties;
+    document.getElementById("yellowScore").innerHTML = yellowWins;
+  }
+
+function playOKOK() {
+  document.getElementById("myAudio").play();
 }
