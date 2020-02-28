@@ -1,202 +1,94 @@
 body {
-  background-color: lightgrey;
   text-align: center;
+  font-family: "Spade", monospace;
+  background-color: #dbf3fa;
+  color: #522d80;
 }
 
 h1 {
+  color: #522d80;
   margin: 0 auto;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Major Mono Display", monospace;
+  font-size: 64px;
+  margin: 2%;
+}
+
+
+h2 {
+  color: #6593f5;
+  font-family: "Spade", monospace;
+  font-weight: lighter;
   font-size: 48px;
   margin: 2%;
-  color: black;
 }
 
-td {
-  border-color: white;
+h3 {
+  color: #f25278;
+  font-family: "Spade", monospace;
+  font-size: 36px;
+  font-weight: lighter;
 }
-
-p {
-  background-color: black;
+h4 {
+  color: #9172ec;
+  font-family: "Spade", monospace;
+  font-size: 28px;
+  font-weight: lighter;
 }
-table, td, th {
-  border: 1px solid black;
-}
-
-div {
-  text margin: 0px;
-}
-
-td {
-  border-color: black;
-}
-
-p {
-  background-color: black;
-}
-table, td, th {
-  border: 1px solid white;
-  color: white;
-}
-
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
-}
-
-.dot {
-  height: 100px;
-  width: 100px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  line-height: 175px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 100px
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
-
-}
-
-.wrap {
-  flex-wrap: wrap;
-  height: 750px;
-  width: 800px;
+  color: #522d80;
+  font-size: 24px;
+  font-family: "Spade", monospace;
 }
 
 .container {
-align-items: center;
-}
-
-.containerv2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.columnv2 {
+.column {
   height: 100%;
   width: 100%;
   flex-direction: column;
 }
 
-.Red {
-  background-color: #ed3b3b;
-  color: transparent;
-}
 
-.Yellow {
-  background-color: #f5ef38;
-  color: transparent;
-}
-
-.first {
-  border: 1px solid;
-  font-size: 46px;
-  height: 90px;
-  line-height: 100px;
-  user-select: none;
-  width: 110px;
-  margin: 5%;
-  border-radius: 50%;
-  color: white;
-}
-
-.first:hover {
-    background-color: white;
-    cursor: pointer;
-    color: black;
-}
-
-.scoreboard {
-  border-collapse: collapse;
-  margin: 2%;
-  border-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#board {
-  background-color: #348ceb;
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 123px;
-  user-select: none;
-
-}
-
-#yellowFirst {
-  background-color: #f5ef38;
-}
-
-#redFirst {
-  background-color: #ed3b3b;
-}
-
-#reset-button {
-  text-align: center;
-  background-color: white;
-  border: 1px solid black;
-  color: black;
-  font-size: 21px;
-  line-height: 55px;
-  margin: auto;
-  margin-top: 5px;
+.wrap {
+  flex-wrap: wrap;
+  height: 456px;
   width: 456px;
-
 }
 
-#reset-button:hover {
-  background-color: black;
-  color: white;
+
+.square {
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  font-size: 96px;
+  height: 150px;
+  line-height: 150px;
+  user-select: none;
+  width: 150px;
+}
+
+
+.square:hover {
+  background-color: #b19cd9;
   cursor: pointer;
 }
 
-#turn {
-  font-size: 70px;
-  margin: 5px;
-}
 
-#reset-scoreboard {
-  background-color: white;
-  border: 1px solid black;
+#reset-button {
+  background-color: #b19cd9;
+  border: 2px solid black;
   color: black;
-  font-size: 21px;
+  font-size: 46px;
   line-height: 55px;
-  margin: 0%;
+  margin: 1%;
   text-align: center;
   width: 456px;
 }
 
-#reset-scoreboard:hover {
+
+#reset-button:hover {
   background-color: black;
   color: white;
   cursor: pointer;
