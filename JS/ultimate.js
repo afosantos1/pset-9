@@ -10,7 +10,6 @@ const miniWinningConditions1 = [
   [1, 5, 9],
   [3, 5, 7]
 ]
-
 const miniWinningConditions2 = [
   //minibox 2
   [11, 12, 13],
@@ -22,7 +21,6 @@ const miniWinningConditions2 = [
   [11, 15, 19],
   [13, 15, 17]
 ]
-
 const miniWinningConditions3 = [
   //minibox 3
   [21, 22, 23],
@@ -34,7 +32,6 @@ const miniWinningConditions3 = [
   [21, 25, 29],
   [23, 25, 27]
 ]
-
 const miniWinningConditions4 = [
   //minibox 4
   [31, 32, 33],
@@ -46,7 +43,6 @@ const miniWinningConditions4 = [
   [31, 35, 39],
   [33, 35, 37]
 ]
-
 const miniWinningConditions5 = [
   //minibox 5
   [41, 42, 43],
@@ -70,7 +66,6 @@ const miniWinningConditions6 = [
   [51, 55, 59],
   [53, 55, 57]
 ]
-
 const miniWinningConditions7 = [
   //minibox 7
   [61, 62, 63],
@@ -82,7 +77,6 @@ const miniWinningConditions7 = [
   [61, 65, 69],
   [63, 65, 67]
 ]
-
 const miniWinningConditions8 = [
   //minibox 8
   [71, 72, 73],
@@ -94,7 +88,6 @@ const miniWinningConditions8 = [
   [71, 75, 79],
   [73, 75, 77]
 ]
-
 const miniWinningConditions9 = [
   //minibox 9
   [81, 82, 83],
@@ -106,7 +99,6 @@ const miniWinningConditions9 = [
   [81, 85, 89],
   [83, 85, 87]
 ]
-
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
 let turn;
