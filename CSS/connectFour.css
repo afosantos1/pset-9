@@ -1,9 +1,9 @@
 body {
-  background-image: url("../images/cloudy.gif");
   background-size: cover;
+  background-color: lightgray;
   text-align: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  color: black;
+  color: white;
 }
 
 h1 {
@@ -11,7 +11,7 @@ h1 {
   font-family: "Comic Sans MS", cursive, sans-serif;
   font-size: 48px;
   margin: 2%;
-  color: black;
+  color: white;
 }
 
 td {
@@ -38,31 +38,7 @@ p {
 }
 table, td, th {
   border: 1px solid white;
-  color: black;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
   color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
 }
 
 .active {
@@ -79,11 +55,11 @@ li a:hover:not(.active) {
   text-align: center;
   vertical-align: middle;
   line-height: 100px
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
             user-select: none;
 
 }
@@ -165,9 +141,9 @@ align-items: center;
 }
 
 #reset-button {
-  background-color: white;
+  background-color: blue;
   border: 1px solid black;
-  color: black;
+  color: white;
   font-size: 21px;
   line-height: 55px;
   margin: auto;
@@ -178,7 +154,7 @@ align-items: center;
 }
 
 #reset-button:hover {
-  background-color: black;
+  background-color: lightblue;
   color: white;
   cursor: pointer;
 }
@@ -189,9 +165,9 @@ align-items: center;
 }
 
 #reset-scoreboard {
-  background-color: white;
+  background-color: blue;
   border: 1px solid black;
-  color: black;
+  color: white;
   font-size: 21px;
   line-height: 55px;
   margin: 0%;
@@ -200,7 +176,7 @@ align-items: center;
 }
 
 #reset-scoreboard:hover {
-  background-color: black;
+  background-color: lightblue;
   color: white;
   cursor: pointer;
 }
