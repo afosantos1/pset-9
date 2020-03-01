@@ -1,6 +1,6 @@
 * {
-  font-family: 'Acme', sans-serif;
-  background-color: black;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: lightgrey;
   color: white;
   cursor: pointer;
 }
@@ -79,7 +79,7 @@ a {
 
 
 .small-square {
-  border: 1px solid red;
+  border: 1px solid blue;
   height: 50px;
   user-select: none;
   width: 50px;
@@ -93,14 +93,14 @@ a {
 }
 
 .scorebox {
-  border: 1px solid white;
+  border: 1px solid blue;
   height: 90px;
   user-select: none;
   width: 225px;
 }
 
 #reset-button {
-  background-color: black;
+  background-color: blue;
   border: 1px solid white;
   color: white;
   font-size: 21px;
@@ -112,7 +112,7 @@ a {
 }
 
 #reset-button:hover {
-  background-color: white;
+  background-color: lightblue;
   color: black;
   cursor: pointer;
 }
