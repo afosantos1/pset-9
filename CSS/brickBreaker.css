@@ -60,6 +60,7 @@
 .menu h1 {
   font-family: "Comic Sans MS", cursive, sans-serif;
   text-align: center;
+  font-size: 48px.;
 }
 
 .menu:hover {
@@ -142,6 +143,7 @@ p {
   width: 600px;
   margin: auto;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 #gameCanvas {
